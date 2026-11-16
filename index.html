@@ -3,190 +3,376 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#151515" />
-  <meta name="format-detection" content="telephone=no" />
-  <title>创界科技 · 船厂三维人员定位与全厂安全报警</title>
-  <meta name="description" content="创界（南通）智能科技有限公司：为船厂提供三维人员定位与全厂安全报警平台。对接现有定位与消防系统，不替代原有消防控制。先从试点区域做起。" />
+  <meta name="theme-color" content="#F3EDE3" />
+  <meta name="color-scheme" content="light" />
+  <meta name="format-detection" content="telephone=no, email=no, address=no" />
+  <title>船厂人员位置与安全报警 · 创界</title>
+  <meta name="description" content="创界（南通）智能科技有限公司的船厂方案：在三维或平面图上看见人员位置；火灾等报警传来后圈出区域并列出附近的人。不替换现有消防，先做可验收的试点。" />
+  <link rel="canonical" href="https://zwwrain-code.github.io/chuangjie-shipyard-safety/" />
+  <meta property="og:title" content="船厂人员位置与安全报警 · 创界" />
+  <meta property="og:description" content="险情发生后看清谁在什么位置，并留下当时的记录。不替换现有消防，定位硬件由专业厂商实施，先从一个船位做可验收的试点。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="zh_CN" />
   <link rel="icon" type="image/png" href="assets/favicon-32.png" />
   <link rel="apple-touch-icon" href="assets/apple-touch.png" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-title" content="创界科技" />
+  <meta name="apple-mobile-web-app-title" content="创界" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip" href="#main">跳到正文</a>
+
   <header class="nav" id="nav">
-    <div class="wrap">
-      <a class="brand" href="#top" aria-label="创界科技 首页">
-        <img class="mark-dark" src="assets/logo-mark-256.png" alt="" />
-        <img class="mark-light" src="assets/logo-mark-inv-256.png" alt="" />
-        <span>
+    <div class="wrap nav-bar">
+      <a class="brand" href="#top" aria-label="创界，返回页首">
+        <img src="assets/logo-mark-256.png" width="32" height="32" alt="" />
+        <span class="brand-text">
           <span class="brand-name">创界</span>
-          <span class="brand-sub">CHUANGJIE</span>
+          <span class="brand-mark">开界</span>
         </span>
       </a>
-      <nav class="nav-links" aria-label="主导航">
-        <a href="#product">产品</a>
-        <a href="#approach">方案</a>
-        <a href="#pilot">落地</a>
-        <a class="btn btn-red" href="#coop">合作洽谈</a>
+      <nav class="nav-links" aria-label="页内导航">
+        <a href="#system">组成</a>
+        <a href="#people">人员</a>
+        <a href="#alarm">报警</a>
+        <a href="#approach">落地</a>
+        <a class="nav-cta" href="#pilot">试点讨论</a>
       </nav>
-      <button class="menu-btn" id="menuBtn" aria-label="打开菜单" type="button"><span></span></button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="drawer">
+        <span class="burger" aria-hidden="true"></span>
+        <span class="sr-only">打开菜单</span>
+      </button>
     </div>
   </header>
-  <div class="mobile-panel" id="mobilePanel">
-    <a href="#product">产品</a>
-    <a href="#approach">方案</a>
-    <a href="#pilot">落地</a>
-    <a href="#coop">合作洽谈</a>
+
+  <div class="drawer" id="drawer" hidden>
+    <div class="drawer-bar">
+      <p class="drawer-brand">创界<span>开界</span></p>
+      <button class="menu-btn" id="closeBtn" type="button" aria-label="关闭菜单">
+        <span class="burger burger-x" aria-hidden="true"></span>
+      </button>
+    </div>
+    <nav class="drawer-links" aria-label="菜单">
+      <a href="#system">系统组成</a>
+      <a href="#people">人员位置</a>
+      <a href="#alarm">安全报警</a>
+      <a href="#approach">怎么落地</a>
+      <a href="#pilot">试点讨论</a>
+    </nav>
+    <p class="drawer-slogan">开一界，成一事</p>
   </div>
 
-  <section class="hero" id="top">
-    <img class="hero-img" src="assets/hero-shipyard.jpg" alt="船厂干船坞中正在建造的船体与龙门吊，作为方案场景示意" />
-    <div class="hero-mask" aria-hidden="true"></div>
-    <div class="wrap hero-content">
-      <p class="eyebrow">创界（南通）智能科技有限公司</p>
-      <h1>开一界，成一事。</h1>
-      <div class="rule" aria-hidden="true"></div>
-      <p class="lead">船厂三维人员定位与全厂安全报警。报警响起后，指挥中心要立刻知道人在哪、危险区里还有谁。创界把人员位置与现有报警信息放进同一套视图，先从试点区域做起。</p>
-      <div class="hero-actions">
-        <a class="btn btn-red" href="#product">查看方案</a>
-        <a class="btn btn-ghost" href="#coop">合作方式</a>
-      </div>
-    </div>
-  </section>
+  <noscript>
+    <nav class="noscript-nav wrap" aria-label="无脚本导航">
+      <a href="#system">系统组成</a>
+      <a href="#people">人员位置</a>
+      <a href="#alarm">安全报警</a>
+      <a href="#approach">怎么落地</a>
+      <a href="#pilot">试点讨论</a>
+    </nav>
+  </noscript>
 
-  <div class="strip">
-    <div class="wrap">
-      <div class="strip-item">
-        <h3>不替代现有消防</h3>
-        <p>火灾报警系统保持独立运行。本平台只接收告警状态，不对消防设备下发控制指令。</p>
-      </div>
-      <div class="strip-item">
-        <h3>对接专业定位厂商</h3>
-        <p>室外用北斗或 GNSS，厂区与车间用 UWB 或蓝牙。创界做软件与三维界面，硬件与安装由专业厂商完成。</p>
-      </div>
-      <div class="strip-item">
-        <h3>先做可验收的试点</h3>
-        <p>从一个船位或高风险区域开始，先验证层间区分、位置是否过期、报警后能否列出危险区人员。</p>
-      </div>
-    </div>
-  </div>
-
-  <section class="block" id="product">
-    <div class="wrap">
-      <p class="kicker">产品</p>
-      <h2>人在哪，危险区有谁，一眼看清。</h2>
-      <p class="intro">船厂真正难的不是再买一套漂亮的大屏，而是报警之后找不到人，也不知道谁还在危险区域。下面两张图是方案效果示意，用于说明指挥中心和现场该如何配合，不是已上线的现场录像。</p>
-
-      <div class="split">
-        <div class="media">
-          <img class="photo" src="assets/control-room.jpg" alt="指挥中心大屏显示船坞三维态势、人员位置点与危险区域示意" />
-          <p class="caption">指挥中心效果示意：大屏呈现船坞三维态势、人员位置与危险区域。图中数据为模拟。</p>
-        </div>
-        <div class="copy">
-          <h3>三维人员定位</h3>
-          <p>在船厂与船体的三维视图里看到每个人所在的船坞、甲板和舱层，而不只是一张平面点位图。</p>
-          <ul>
-            <li>按甲板、舱室分层查看，避免上下层位置混在一起</li>
-            <li>位置过期或标签离线时明确标出，不把旧位置当成当前所在</li>
-            <li>报警后立即列出危险区内及附近人员，便于指挥找人</li>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">创界（南通）智能科技有限公司</p>
+          <h1>船厂人员位置<span class="h1-break">与安全报警</span></h1>
+          <p class="hero-lead">险情发生后，要能看清谁在什么位置，并把当时的位置留下来。本厂人员、协作单位和访客可以按试点名单出现在同一画面上。</p>
+          <ul class="hero-facts">
+            <li>不替换现有消防系统，只接收报警状态。</li>
+            <li>定位基站和标签由专业厂商安装。</li>
+            <li>先从一个船位或一块高风险区域做起。</li>
           </ul>
         </div>
+        <figure class="hero-figure">
+          <div class="frame">
+            <img
+              src="assets/hero-shipyard.jpg"
+              width="1280"
+              height="720"
+              alt="干船坞中的船体与龙门吊，用作方案场景示意，不是某一船厂的实时监控画面。"
+              fetchpriority="high"
+            />
+            <span class="stamp">场景示意</span>
+          </div>
+          <figcaption>照片用来说明船坞场景，不是现场录像，也不代表已经在某家船厂安装。</figcaption>
+        </figure>
       </div>
+    </section>
 
-      <div class="split reverse" style="margin-top:72px">
-        <div class="media">
-          <img class="photo" src="assets/workshop-alarm.jpg" alt="船体车间内的人员通道、烟雾探测器与报警灯示意" />
-          <p class="caption">车间与船体分段现场示意：报警来自现场已有探测器，平台负责把信号和人员位置放到一起。</p>
+    <section class="section" id="system">
+      <div class="wrap">
+        <p class="kicker">01　系统组成</p>
+        <h2>画面里要接上的四个部分</h2>
+        <p class="intro">作业人员佩戴工牌式定位标签。基站接收标签信号，安装位置按立柱、船体和物料堆放来调整。软件把人画到船坞和堆场的图上，并接收现有报警系统送来的状态。创界做软件和这张图上的用法。基站、标签和现场安装由专业定位厂商完成。</p>
+        <div class="comp-grid">
+          <article class="comp">
+            <p class="idx">01</p>
+            <h3>工牌式定位标签</h3>
+            <p>发给作业人员随身佩戴。办公楼、船坞或堆场建了接收范围的，用同一个标签编号记录这个人在各处的位置和时刻。信号中断，或超过约定时间没有新的位置，就标成离线或过期，不再把旧点当作当前所在。</p>
+          </article>
+          <article class="comp">
+            <p class="idx">02</p>
+            <h3>现场定位基站</h3>
+            <p>装在立柱、墙面或现场同意的支架上，用来收标签信号。船体、钢柱和成堆的物料都会挡信号。某一段收不全时，改这一段基站的位置和数量，例如挪到立柱上部或下部。布置以实测为准，不按图纸宣布全厂已经覆盖。</p>
+          </article>
+          <article class="comp">
+            <p class="idx">03</p>
+            <h3>船厂位置图</h3>
+            <p>在船坞、堆场和船体的三维视图或平面图上显示人员，并按甲板、舱层分开看。三维用来看船体分层，平面用来看坞内和堆场的平面位置。本页的图是示意，点位为模拟数据。</p>
+          </article>
+          <article class="comp">
+            <p class="idx">04</p>
+            <h3>报警状态</h3>
+            <p>从已在运行的火灾、烟雾、气体等报警系统接收状态。状态进来之后，在图上标出约定的影响范围，并列出范围内和附近的人员。平台不向消防设备下发控制指令。</p>
+          </article>
         </div>
-        <div class="copy">
-          <h3>全厂安全报警</h3>
-          <p>接入火灾、烟雾、气体等已有报警信号。报警发生时，自动圈出影响区域，并对照人员位置给出附近名单。</p>
-          <ul>
-            <li>与现有消防报警系统对接，不替换原控制室和原控制逻辑</li>
-            <li>平台只做监视、定位与流程协同，不向消防设备发控制命令</li>
-            <li>撤离确认由现场人员人工完成，系统记录，不自动判定已经撤出</li>
-          </ul>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="people">
+      <div class="wrap">
+        <p class="kicker">02　人员位置</p>
+        <h2>船坞和堆场上的人</h2>
+        <p class="intro">哪里有谁，放在同一张图里看。人离开办公楼再到码头或堆场，继续用原来的标签编号。下面四件事是试点里要核对的用法。定位误差、层间能不能分开，都在现场量，不写成已经达到的指标。</p>
+        <div class="scene-grid">
+          <article class="scene">
+            <p class="idx">01</p>
+            <h3>在图上看见人</h3>
+            <p>船坞、堆场和船体上的人员显示在三维或平面图上。需要时按甲板和舱层分开，避免上下层叠成同一个点。会不会串层，要在真实钢结构里测，不按设备说明书上的指标验收。</p>
+          </article>
+          <article class="scene">
+            <p class="idx">02</p>
+            <h3>办公楼和船坞用同一个标识</h3>
+            <p>两处都建了接收范围时，用同一个标签编号记下各处的位置和时刻。人从办公室走到船坞，不用再换一套编号。只建了一处接收范围，画面就只显示这一处。</p>
+          </article>
+          <article class="scene">
+            <p class="idx">03</p>
+            <h3>本厂、协作单位和访客</h3>
+            <p>这是试点配置，不是已经铺开的用法。船厂把名单给到现场之后，画面上可以分成本厂员工、协作单位和访客。没有名单，就只显示人员位置，不做单位区分。</p>
+          </article>
+          <article class="scene">
+            <p class="idx">04</p>
+            <h3>钢结构旁边要现场调</h3>
+            <p>立柱、船体和钢质舱室会挡住信号。基站留在立柱上部、下部，还是改间距，看这一段实测的接收情况再定。舱内测不稳定的区段记为未覆盖，不写成已经解决。</p>
+          </article>
         </div>
+        <figure class="photo-figure">
+          <div class="frame">
+            <img
+              src="assets/workshop-alarm.jpg"
+              width="1280"
+              height="720"
+              alt="船体分段车间的通道，柱上有烟雾探测器和报警灯。场景示意，图中的人不是定位点位。"
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="stamp">场景示意</span>
+          </div>
+          <figcaption>车间通道的场景示意。柱上的探测器和报警灯代表现场已有的报警设备。图中的人不是定位点位。</figcaption>
+        </figure>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="block arch" id="approach">
-    <div class="wrap">
-      <p class="kicker">方案</p>
-      <h2>怎么落地，不另起一套空中楼阁。</h2>
-      <p class="intro">市场里已有人员定位和消防厂商。创界做的是把定位、现有报警和船厂指挥流程做成一套能用的界面，并在试点现场验收。</p>
-      <div class="cards">
-        <article class="card">
-          <h3>定位怎么接</h3>
-          <p>室外开阔区域采用北斗或 GNSS；车间、船坞和甲板优先 UWB 或蓝牙。钢结构舱内信号容易被遮挡，层间能否分清必须在现场实测，不能只看宣传指标。</p>
-        </article>
-        <article class="card">
-          <h3>报警怎么接</h3>
-          <p>通过消防或报警厂商提供的接口、网关接入告警状态。原有火灾自动报警系统继续独立工作，本平台不替代、不改建其控制回路。</p>
-        </article>
-        <article class="card">
-          <h3>谁来交付</h3>
-          <p>创界负责软件、三维界面和报警后找人的业务流程。定位基站、标签与现场安装由专业硬件厂商实施，船厂提供试点区域与管理配合。</p>
-        </article>
+    <section class="section" id="alarm">
+      <div class="wrap">
+        <p class="kicker">03　安全报警</p>
+        <h2>报警传来之后</h2>
+        <p class="intro">火灾或其他全厂报警把状态送到位置图上之后，按事先约定的范围圈出受影响区域，并列出其中和附近的人。灭火、广播和设备联动仍由原来的消防系统负责。平台只接收状态。</p>
+
+        <div class="monitor">
+          <figure class="schematic">
+            <div class="frame">
+              <svg viewBox="0 0 720 460" role="img" aria-labelledby="mapTitle mapDesc">
+                <title id="mapTitle">船坞平面示意</title>
+                <desc id="mapDesc">模拟数据。干船坞、船体、立柱、人员点位和一块报警范围。不是现场监控画面，也不区分甲板和舱层。</desc>
+                <rect width="720" height="460" fill="#E7DFD2" />
+                <rect x="150" y="24" width="420" height="412" fill="#F7F3EC" />
+                <rect x="118" y="24" width="32" height="412" fill="#2A2724" />
+                <rect x="570" y="24" width="32" height="412" fill="#2A2724" />
+                <rect x="24" y="36" width="80" height="58" fill="#FAF7F2" stroke="#151515" stroke-width="2" />
+                <path d="M360 72 L470 150 L488 404 L232 404 L250 150 Z" fill="#5C5854" />
+                <line x1="360" y1="130" x2="360" y2="392" stroke="#F3EDE3" stroke-width="1" opacity="0.4" />
+                <line x1="276" y1="210" x2="444" y2="210" stroke="#F3EDE3" stroke-width="1" opacity="0.3" />
+                <line x1="258" y1="280" x2="462" y2="280" stroke="#F3EDE3" stroke-width="1" opacity="0.3" />
+                <line x1="244" y1="345" x2="476" y2="345" stroke="#F3EDE3" stroke-width="1" opacity="0.3" />
+                <rect x="250" y="312" width="180" height="84" fill="rgba(196,59,42,0.30)" stroke="#C43B2A" stroke-width="1.5" stroke-dasharray="5 4" />
+                <g fill="#151515">
+                  <rect x="168" y="78" width="14" height="14" />
+                  <rect x="168" y="188" width="14" height="14" />
+                  <rect x="168" y="298" width="14" height="14" />
+                  <rect x="538" y="110" width="14" height="14" />
+                  <rect x="538" y="230" width="14" height="14" />
+                  <rect x="538" y="350" width="14" height="14" />
+                </g>
+                <g fill="#151515" stroke="#F7F3EC" stroke-width="3">
+                  <circle cx="360" cy="160" r="7" />
+                  <circle cx="410" cy="230" r="7" />
+                  <circle cx="200" cy="260" r="7" />
+                  <circle cx="640" cy="200" r="7" />
+                </g>
+                <g fill="#C43B2A" stroke="#F7F3EC" stroke-width="3">
+                  <circle cx="320" cy="352" r="7" />
+                  <circle cx="390" cy="368" r="7" />
+                </g>
+                <circle cx="430" cy="340" r="7" fill="#F7F3EC" stroke="#6B6560" stroke-width="2" />
+                <circle cx="64" cy="65" r="7" fill="#151515" stroke="#FAF7F2" stroke-width="3" />
+              </svg>
+              <span class="stamp">模拟数据 / 示意</span>
+            </div>
+            <ul class="legend">
+              <li><i class="dot dot-staff" aria-hidden="true"></i>本厂人员</li>
+              <li><i class="dot dot-partner" aria-hidden="true"></i>协作单位或访客（试点配置）</li>
+              <li><i class="dot dot-offline" aria-hidden="true"></i>离线或过期</li>
+              <li><i class="swatch" aria-hidden="true"></i>报警范围</li>
+            </ul>
+            <figcaption>平面示意，没有画出甲板和舱层。正式画面要能分层，避免上下层叠在同一个点上。点位、单位区分和报警范围都是模拟数据。</figcaption>
+          </figure>
+
+          <aside class="roster" aria-label="模拟的附近人员名单">
+            <p class="stamp-inline">模拟数据 / 示意</p>
+            <h3>范围内和附近的人</h3>
+            <p class="fine">编号是例子。离线标签不写入「仍在现场」。</p>
+            <ul>
+              <li>
+                <span class="who">标签 014</span>
+                <span class="meta">本厂 · 位置在更新 · 范围内</span>
+              </li>
+              <li>
+                <span class="who">标签 027</span>
+                <span class="meta">协作单位 · 试点配置 · 范围内</span>
+              </li>
+              <li>
+                <span class="who">标签 008</span>
+                <span class="meta">本厂 · 位置在更新 · 范围外，附近</span>
+              </li>
+              <li>
+                <span class="who">标签 031</span>
+                <span class="meta">离线 · 不作为当前所在</span>
+              </li>
+            </ul>
+          </aside>
+        </div>
+
+        <div class="scene-grid">
+          <article class="scene">
+            <p class="idx">01</p>
+            <h3>圈出受影响的范围</h3>
+            <p>报警点对应到船坞、舱室或堆场里事先约定的一块范围，在图上标出来。范围怎么划，试点时和船厂、报警厂商一起定。平台不改写消防系统里的分区。</p>
+          </article>
+          <article class="scene">
+            <p class="idx">02</p>
+            <h3>列出附近的人</h3>
+            <p>范围内和紧邻范围的人员列成名单，方便指挥人员呼叫。名单来自当时的定位结果。过期和离线的标签单独标出，不混进「仍在现场」。</p>
+          </article>
+          <article class="scene">
+            <p class="idx">03</p>
+            <h3>疏散时人工确认</h3>
+            <p>撤离过程中，用当前位置看谁还在该区域内。人是否已经撤出，由现场负责人人工确认。系统记下确认人和确认时间，不自行改成已经撤出。</p>
+          </article>
+          <article class="scene">
+            <p class="idx">04</p>
+            <h3>留下当时的记录</h3>
+            <p>险情发生时的位置、报警状态和人工确认结果留在记录里，供事后查看。记录保留多久、谁可以看，按船厂的管理要求在试点里定。</p>
+          </article>
+        </div>
+
+        <figure class="photo-figure">
+          <div class="frame">
+            <img
+              src="assets/control-room.jpg"
+              width="1280"
+              height="720"
+              alt="指挥室大屏上的船坞俯视图，带有人员点位和一块报警区域。画面为模拟示意，不是已上线系统的截图。"
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="stamp">模拟数据 / 示意</span>
+          </div>
+          <figcaption>指挥室效果示意。大屏上的点位和报警区域是模拟的，不是船厂现场录像，也不是已经上线的系统截图。</figcaption>
+        </figure>
       </div>
-      <div class="note">试点验收先看三件事：人员会不会跨层串位、过期或离线位置有没有清楚标明、报警发生后能否在短时间内列出危险区及附近人员。这三件事过了，再讨论扩到全厂。</div>
-    </div>
-  </section>
+    </section>
 
-  <section class="block" id="pilot">
-    <div class="wrap">
-      <p class="kicker">落地</p>
-      <h2>从一个船位或高风险区域开始。</h2>
-      <p class="intro">不建议一上来就铺全厂。先选一个能看清效果、也能验清问题的范围，走完报警后找人的完整流程，再决定下一步。</p>
-      <div class="steps">
-        <article class="step">
-          <div class="step-num">01</div>
-          <h3>划定试点</h3>
-          <p>选定一个船位、船坞或高风险作业区，明确要看的甲板与舱层范围。</p>
-        </article>
-        <article class="step">
-          <div class="step-num">02</div>
-          <h3>对接与实测</h3>
-          <p>安装或接入定位，接通现有报警信号，在真实钢结构和多层空间里测精度与延时。</p>
-        </article>
-        <article class="step">
-          <div class="step-num">03</div>
-          <h3>走通流程</h3>
-          <p>与指挥中心一起做一次模拟报警：谁在危险区、如何通知、如何人工确认撤离。</p>
-        </article>
-        <article class="step">
-          <div class="step-num">04</div>
-          <h3>再扩大范围</h3>
-          <p>试点达标后再扩展到更多船位或全厂，避免尚未验清就全面铺开。</p>
-        </article>
+    <section class="section section-alt" id="approach">
+      <div class="wrap">
+        <p class="kicker">04　怎么落地</p>
+        <h2>不换消防，先做一个船位</h2>
+        <p class="intro">先不要铺全厂。选定一个船位或一块高风险区域，把人员位置和报警状态接到一起，按下面的步骤做，并用四项验收看结果。</p>
+        <ol class="steps">
+          <li>
+            <p class="idx">01</p>
+            <h3>保持现有消防</h3>
+            <p>火灾自动报警系统继续独立运行，控制室和控制逻辑不动。本平台通过消防或报警厂商提供的接口接收告警状态，不向消防设备下发控制指令。</p>
+          </li>
+          <li>
+            <p class="idx">02</p>
+            <h3>接入定位厂商</h3>
+            <p>室外开阔处可以评估北斗或 GNSS。车间、船坞和甲板由定位厂商按遮挡情况评估 UWB 或蓝牙。创界做软件、三维或平面界面，以及报警之后找人的操作。基站、标签和安装由厂商实施。</p>
+          </li>
+          <li>
+            <p class="idx">03</p>
+            <h3>先定一个船位</h3>
+            <p>写明要看哪些甲板和舱层。接入定位和报警状态，在真实钢结构里看遮挡和延时。这一段有了验收结果，再讨论其他船位或更大范围。</p>
+          </li>
+        </ol>
+
+        <h3 class="accept-title" id="accept">试点验收看这四项</h3>
+        <ol class="accept">
+          <li>
+            <h3>甲板和舱层不串位</h3>
+            <p>同一个人不能在画面上同时落在上层甲板和下层舱室。这一段分不清层，就记成未通过，不先当作可用。</p>
+          </li>
+          <li>
+            <h3>过期、离线单独标明</h3>
+            <p>超过约定时间没有新位置的，标成过期。没有信号的，标成离线。两种都不算作当前仍在现场。</p>
+          </li>
+          <li>
+            <h3>报警对得上附近的人</h3>
+            <p>报警状态进来后，能对到约定的位置范围，并列出范围内和附近的人员。对不上范围，或名单里混入过期点，这一项不算通过。</p>
+          </li>
+          <li>
+            <h3>撤离由人工确认</h3>
+            <p>现场负责人确认人已经撤出，系统只记录确认结果。没有人工确认的，不自动写成已经安全。</p>
+          </li>
+        </ol>
+        <p class="boundary">定位误差，以及钢质舱室内能不能稳定收到信号，以试点实测记录为准。测不到稳定位置的区段标成未覆盖。本期只做人员位置，以及报警状态与附近人员的对照。</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="block" id="coop" style="padding-top:0">
-    <div class="wrap">
-      <div class="coop-box">
+    <section class="cta" id="pilot">
+      <div class="wrap cta-grid">
         <div>
-          <p class="kicker">合作</p>
-          <h2>欢迎就试点交流。</h2>
-          <p>创界可与船厂、系统集成商一起做小范围试点：创界出软件与界面，定位和消防硬件仍走专业厂商，现场管理由船厂主导。</p>
-          <p>本站用于方案展示。场景图为效果示意，人员位置与报警数据均为模拟，不代表已经在某家船厂上线运行的现场系统。</p>
+          <p class="kicker">05　试点</p>
+          <h2>讨论一个可验收的试点</h2>
+          <p>可以把一个船位或一块高风险区域拿来对一下：要看哪些甲板和舱层，定位厂商怎么进场，现有报警的状态从哪个接口送出来，以及上面四项验收由谁在现场确认。</p>
+          <p><a class="btn" href="#accept">先看验收项</a></p>
         </div>
-        <div>
-          <p style="margin:0 0 8px;font-size:13px;color:rgba(255,255,255,.55)">项目承担</p>
-          <p style="margin:0;font-family:var(--serif);font-size:22px;color:#fff;">创界（南通）智能科技有限公司</p>
-          <p style="margin:10px 0 0;font-size:13px;letter-spacing:.16em;color:#e8a59c;">CHUANGJIE</p>
+        <div class="cta-id">
+          <img src="assets/logo-mark-inv-256.png" width="40" height="40" alt="" />
+          <p class="cta-legal">创界（南通）智能科技有限公司</p>
+          <p class="cta-slogan">开一界，成一事</p>
+          <p class="cta-note">本页不公布电话、邮箱或即时通讯账号。场景照片和位置图均为示意，人员点位是模拟数据。</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <footer>
-    <div class="wrap">
-      <div><strong>创界（南通）智能科技有限公司</strong></div>
-      <div>方案展示 · 场景与数据均为示意</div>
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-name">创界（南通）智能科技有限公司</p>
+        <p class="footer-slogan">开界 · 开一界，成一事</p>
+      </div>
+      <nav class="footer-links" aria-label="页脚导航">
+        <a href="#system">系统组成</a>
+        <a href="#people">人员位置</a>
+        <a href="#alarm">安全报警</a>
+        <a href="#approach">怎么落地</a>
+        <a href="#pilot">试点讨论</a>
+      </nav>
+      <p class="footer-note">方案展示。照片、平面图和名单均为示意，人员点位为模拟数据，不代表已经在船厂上线的系统。</p>
     </div>
   </footer>
 
